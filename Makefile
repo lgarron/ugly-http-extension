@@ -1,6 +1,6 @@
 
 ZIP = ugly-http.zip
-SOURCE_FILES = manifest.json ugly.css $(wildcard images/*.png)
+SOURCE_FILES = manifest.json ugly.css popup.html popup.js $(wildcard images/*.png)
 
 # Target name is expand to assist zsh autocomplete.
 ugly-http.zip: $(SOURCE_FILES)
