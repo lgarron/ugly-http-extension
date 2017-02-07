@@ -1,4 +1,4 @@
 body:not(.escape-httpugly) {
-  filter: brightness(1.5) grayscale(0.85) !important;
+  filter: grayscale(0.85) !important;
   opacity: 0.75 !important;
 }
