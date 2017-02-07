@@ -3,13 +3,20 @@
 
   "name": "Ugly HTTP",
   "description": "Makes HTTP pages conspicuous.",
-  "version": "0.1",
+  "version": "0.1.1",
   "icons": {
     "128": "images/extensionIcon-128px.png"
   },
   "permissions": [
     "activeTab"
   ],
+  "browser_action": {
+     "default_icon": {
+            "128": "images/extensionIcon-128px.png"
+          },
+   "default_popup": "popup.html",
+   "default_title": "Undo"
+  },
   "content_scripts": [
     {
       "matches": ["http://*/*"],
