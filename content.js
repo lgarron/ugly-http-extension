@@ -13,7 +13,6 @@ function defaultTheme() {
   return "faded";
 }
 
-document.body.classList.add("ugly-http-status-loaded");
 if (!window.isSecureContext) {
   chrome.storage.local.get({
     theme: "default"
@@ -26,3 +25,6 @@ if (!window.isSecureContext) {
     document.body.classList.add("ugly-http-theme-" + theme);
   });
 }
+setTimeout(function() {
+document.body.classList.add("ugly-http-status-loaded");
+}, 10);
