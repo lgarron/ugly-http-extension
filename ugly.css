@@ -1,4 +1,31 @@
-body:not(.escape-httpugly) {
-  filter: grayscale(0.85) !important;
-  opacity: 0.75 !important;
+body:not(.ugly-http-status-loaded) {
+  filter: grayscale(1) !important;
+  opacity: 0.1 !important;
+}
+
+body.ugly-http-theme-faded {
+  filter: opacity(75%) grayscale(85%) contrast(95%) !important;
+}
+
+body.ugly-http-theme-grayscale {
+  filter: grayscale(1) !important;
+}
+
+body.ugly-http-theme-sepia {
+  filter: sepia(1) !important;
+}
+
+body.ugly-http-theme-wide-blur {
+  filter: blur(32px) !important;
+}
+
+body.ugly-http-theme-overexposed {
+  filter: brightness(300%) !important;
+}
+
+body.ugly-http-theme-flip-hue {
+  filter: hue-rotate(180deg) !important;
+}
+
+body.ugly-http-theme-none {
 }

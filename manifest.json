@@ -8,19 +8,25 @@
     "128": "images/extensionIcon-128px.png"
   },
   "permissions": [
+    "storage",
     "activeTab"
   ],
   "browser_action": {
-     "default_icon": {
-            "128": "images/extensionIcon-128px.png"
-          },
-   "default_popup": "popup.html",
-   "default_title": "Undo"
+      "default_icon": {
+      "128": "images/extensionIcon-128px.png"
+    },
+    "default_popup": "popup.html",
+    "default_title": "Undo"
   },
   "content_scripts": [
     {
       "matches": ["http://*/*"],
+      "js": ["content.js"],
       "css": ["ugly.css"]
     }
-  ]
+  ],
+  "options_ui": {
+    "page": "options/options.html",
+    "chrome_style": true
+  }
 }
