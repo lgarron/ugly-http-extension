@@ -3,7 +3,7 @@
 
   "name": "Ugly HTTP",
   "description": "Makes HTTP pages conspicuous.",
-  "version": "0.1.54",
+  "version": "1.0.0",
   "icons": {
     "128": "images/extensionIcon-128px.png"
   },
