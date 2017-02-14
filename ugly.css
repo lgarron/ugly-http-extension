@@ -27,5 +27,13 @@ body.ugly-http-theme-flip-hue {
   filter: hue-rotate(180deg) !important;
 }
 
+body.ugly-http-theme-red {
+  filter: sepia(1) hue-rotate(-40deg) saturate(2) !important
+}
+
+body.ugly-http-theme-blue {
+  filter: sepia(1) hue-rotate(170deg) saturate(2) !important;
+}
+
 body.ugly-http-theme-none {
 }

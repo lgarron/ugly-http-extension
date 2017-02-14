@@ -6,6 +6,8 @@ var themes = [
   "wide-blur",
   "overexposed",
   "flip-hue",
+  "red",
+  "blue",
   "none"
 ];
 
