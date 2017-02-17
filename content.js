@@ -27,6 +27,5 @@ if (!window.isSecureContext) {
     document.body.classList.add("ugly-http-theme-" + theme);
   });
 }
-setTimeout(function() {
+
 document.body.classList.add("ugly-http-status-loaded");
-}, 10);
