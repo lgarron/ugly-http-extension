@@ -1,6 +1,6 @@
 body:not(.ugly-http-status-loaded) {
   filter: grayscale(1) !important;
-  opacity: 0.1 !important;
+  opacity: 0.5 !important;
 }
 
 body.ugly-http-theme-faded {
