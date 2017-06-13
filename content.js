@@ -17,14 +17,18 @@ function defaultTheme() {
 
 if (!window.isSecureContext) {
   chrome.storage.local.get({
-    theme: "default"
+    theme: "default",
+    exceptions: ""
   }, function(items) {
     var theme = items.theme;
+    var exceptions = items.exceptions.split(',')
+        .map(Function.prototype.call, String.prototype.trim);
     if (themes.indexOf(theme) === -1) {
       theme = defaultTheme();
     }
-
-    document.body.classList.add("ugly-http-theme-" + theme);
+    if (!exceptions.includes(window.location.host)) {
+      document.body.classList.add("ugly-http-theme-" + theme);
+    }
   });
 }
 

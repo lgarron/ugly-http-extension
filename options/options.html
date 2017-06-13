@@ -10,28 +10,53 @@
       text-align: center;
       margin: 2em;
     }
+    table {
+      margin-right: auto;
+      margin-left: auto;
+    }
   </style>
 </head>
 <body>
 
 <div class="content">
-  Theme:
-  <select id="theme">
-    <option value="default" selected>default (currently: faded)</option>
-    <option value="faded">faded</option>
-    <option value="grayscale">grayscale</option>
-    <option value="sepia">sepia</option>
-    <option value="wide-blur">wide-blur</option>
-    <option value="overexposed">overexposed</option>
-    <option value="flip-hue">flip-hue</option>
-    <option value="red">red</option>
-    <option value="blue">blue</option>
-    <option value="none">none</option>
-  </select>
-
+  <table>
+    <tr>
+      <td>
+        Theme:
+      </td>
+      <td>
+        <select id="theme">
+          <option value="default" selected>default (currently: faded)</option>
+          <option value="faded">faded</option>
+          <option value="grayscale">grayscale</option>
+          <option value="sepia">sepia</option>
+          <option value="wide-blur">wide-blur</option>
+          <option value="overexposed">overexposed</option>
+          <option value="flip-hue">flip-hue</option>
+          <option value="red">red</option>
+          <option value="blue">blue</option>
+          <option value="none">none</option>
+        </select>
+        </td>
+      </tr>
+      <tr />
+      <tr>
+        <td>
+          Exceptions:
+        </td>
+        <td>
+          <input type="text" id="exceptions">
+        </td>
+      </tr>
+    <tr>
+      <td />
+      <td>
+        (comma separated)
+      </td>
+    </tr>
+  </table>
   <br><br>
   <div id="status"></div>
-
 </div>
 
 <script src="options.js"></script>
