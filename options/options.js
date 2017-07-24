@@ -12,10 +12,18 @@ function display_status(message) {
 // Saves options to chrome.storage
 function save_options() {
   var theme = document.getElementById("theme").value;
-  var exceptions = document.getElementById("exceptions").value;
+  var exceptions = document.getElementById("exceptions").value
+      .split('\n')
+      .map(Function.prototype.call, String.prototype.trim);
+  var exceptionsMap = {};
+  exceptions.forEach(function(item) {
+    if (item) {
+      exceptionsMap[item] = true;
+    }
+  })
   chrome.storage.local.set({
     theme: theme,
-    exceptions: exceptions,
+    exceptions: exceptionsMap,
   }, display_status.bind(this, "Option saved!"));
 }
 
@@ -35,7 +43,10 @@ function restore_options() {
     exceptions: ""
   }, function(items) {
     document.getElementById("theme").value = items.theme;
-    document.getElementById("exceptions").value = items.exceptions;
+    var exceptionList = document.getElementById("exceptions");
+    for (var exception in items.exceptions) {
+        exceptionList.value += exception + '\n';
+      };
   });
 }
 document.addEventListener("DOMContentLoaded", restore_options);

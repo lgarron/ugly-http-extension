@@ -21,12 +21,11 @@ if (!window.isSecureContext) {
     exceptions: ""
   }, function(items) {
     var theme = items.theme;
-    var exceptions = items.exceptions.split(',')
-        .map(Function.prototype.call, String.prototype.trim);
+    var exceptions = items.exceptions;
     if (themes.indexOf(theme) === -1) {
       theme = defaultTheme();
     }
-    if (!exceptions.includes(window.location.host)) {
+    if (!exceptions[window.location.hostname]) {
       document.body.classList.add("ugly-http-theme-" + theme);
     }
   });
