@@ -40,7 +40,7 @@ function save_options_with_delay() {
 function restore_options() {
   chrome.storage.local.get({
     theme: "default",
-    exceptions: ""
+    exceptions: {}
   }, function(items) {
     document.getElementById("theme").value = items.theme;
     var exceptionList = document.getElementById("exceptions");

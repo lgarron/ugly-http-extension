@@ -18,7 +18,7 @@ function defaultTheme() {
 if (!window.isSecureContext) {
   chrome.storage.local.get({
     theme: "default",
-    exceptions: ""
+    exceptions: {}
   }, function(items) {
     var theme = items.theme;
     var exceptions = items.exceptions;
