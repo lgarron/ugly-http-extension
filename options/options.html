@@ -14,6 +14,9 @@
       margin-right: auto;
       margin-left: auto;
     }
+    .full-width {
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -25,7 +28,7 @@
         Theme:
       </td>
       <td>
-        <select id="theme">
+        <select id="theme" class="full-width">
           <option value="default" selected>default (currently: faded)</option>
           <option value="faded">faded</option>
           <option value="grayscale">grayscale</option>
@@ -37,21 +40,20 @@
           <option value="blue">blue</option>
           <option value="none">none</option>
         </select>
-        </td>
-      </tr>
-      <tr />
-      <tr>
-        <td>
-          Exceptions:
-        </td>
-        <td>
-          <textarea rows=5 id="exceptions"></textarea>
-        </td>
-      </tr>
+      </td>
+    </tr>
     <tr>
-      <td />
       <td>
-        (newline separated)
+        Exceptions:
+      </td>
+      <td>
+        <textarea rows=5 id="exceptions" class="full-width"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        (exact hostnames, newline separated)
       </td>
     </tr>
   </table>
