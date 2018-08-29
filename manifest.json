@@ -26,8 +26,21 @@
       "css": ["ugly.css"]
     }
   ],
+  "background": {
+    "scripts": ["command.js"],
+    "persistent": false
+  },
   "options_ui": {
     "page": "options/options.html",
     "chrome_style": true
+  },
+  "commands": {
+    "go-secure": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",
+        "mac": "MacCtrl+Command+S"
+      },
+      "description": "Switch to HTTPS"
+    }
   }
 }
