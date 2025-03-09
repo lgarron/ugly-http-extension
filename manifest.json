@@ -1,38 +1,38 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
 
   "name": "Ugly HTTP",
   "description": "Makes HTTP pages conspicuous.",
-  "author": "Lucas Garron (@lgarron)",
-  "version": "1.2.0",
+  "author": "Lucas Garron",
+  "version": "2.0.0",
   "icons": {
-    "128": "images/extensionIcon-128px.png"
+    "128": "./src/images/extensionIcon-128px.png"
   },
   "permissions": [
     "storage",
-    "activeTab"
+    "activeTab",
+    "scripting"
   ],
-  "browser_action": {
+  "action": {
       "default_icon": {
-      "128": "images/extensionIcon-128px.png"
+      "128": "./src/images/extensionIcon-128px.png"
     },
-    "default_popup": "popup.html",
     "default_title": "Undo"
+  },
+  "background": {
+    "service_worker": "./src/background.js"
   },
   "content_scripts": [
     {
+      "run_at": "document_end",
       "matches": ["http://*/*"],
-      "js": ["content.js"],
-      "css": ["ugly.css"]
+      "js": ["./src/content.js"],
+      "css": ["./src/ugly.css"],
+      "world": "ISOLATED"
     }
   ],
-  "background": {
-    "scripts": ["command.js"],
-    "persistent": false
-  },
   "options_ui": {
-    "page": "options/options.html",
-    "chrome_style": true
+    "page": "./src/options/options.html"
   },
   "commands": {
     "go-secure": {

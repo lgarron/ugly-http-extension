@@ -1,4 +1,3 @@
-
 var themes = [
   "faded",
   "grayscale",
@@ -16,10 +15,12 @@ function defaultTheme() {
 }
 
 if (!window.isSecureContext) {
+  document.body.classList.add("ugly-http-status-loaded");
+
   chrome.storage.local.get({
     theme: "default",
     exceptions: {}
-  }, function(items) {
+  }, function (items) {
     var theme = items.theme;
     var exceptions = items.exceptions;
     if (themes.indexOf(theme) === -1) {
@@ -30,5 +31,3 @@ if (!window.isSecureContext) {
     }
   });
 }
-
-document.body.classList.add("ugly-http-status-loaded");
