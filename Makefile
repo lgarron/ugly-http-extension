@@ -14,3 +14,7 @@ ${ZIP}: ${SOURCE_FILES} clean
 .PHONY: clean
 clean:
 	rm -rf ./dist
+
+.PHONY: reset
+reset:
+	rm -rf ./node_modules
