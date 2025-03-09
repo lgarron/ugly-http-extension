@@ -28,12 +28,12 @@ body.ugly-http-theme-flip-hue {
 }
 
 body.ugly-http-theme-red {
-  filter: sepia(1) hue-rotate(-40deg) saturate(2) !important
+  filter: sepia(1) hue-rotate(-40deg) saturate(2) !important;
 }
 
 body.ugly-http-theme-blue {
   filter: sepia(1) hue-rotate(170deg) saturate(2) !important;
 }
 
-body.ugly-http-theme-none {
-}
+/* Since this is empty, we don't specify anything. */
+/* body.ugly-http-theme-none {} */

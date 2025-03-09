@@ -1,7 +1,7 @@
 chrome.action.onClicked.addListener(async (tab) => {
   await chrome.scripting.executeScript({
     target: { tabId: tab.id },
-    files: ['./src/clear.js']
+    files: ["./src/clear.js"],
   });
 });
 
@@ -10,12 +10,9 @@ chrome.commands.onCommand.addListener(async (command, tab) => {
     const url = new URL(tab.url);
     if (url.protocol === "http:") {
       url.protocol = "https:";
-      await chrome.tabs.update(
-        tab.id,
-        {
-          url: url.toString()
-        }
-      );
+      await chrome.tabs.update(tab.id, {
+        url: url.toString(),
+      });
     }
   }
 });

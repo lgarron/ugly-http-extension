@@ -8,13 +8,9 @@
   "icons": {
     "128": "./src/images/extensionIcon-128px.png"
   },
-  "permissions": [
-    "storage",
-    "activeTab",
-    "scripting"
-  ],
+  "permissions": ["storage", "activeTab", "scripting"],
   "action": {
-      "default_icon": {
+    "default_icon": {
       "128": "./src/images/extensionIcon-128px.png"
     },
     "default_title": "Undo"

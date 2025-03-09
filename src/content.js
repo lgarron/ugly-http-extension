@@ -1,4 +1,4 @@
-var themes = [
+const themes = new Set([
   "faded",
   "grayscale",
   "sepia",
@@ -7,8 +7,8 @@ var themes = [
   "flip-hue",
   "red",
   "blue",
-  "none"
-];
+  "none",
+]);
 
 function defaultTheme() {
   return "faded";
@@ -17,17 +17,19 @@ function defaultTheme() {
 if (!window.isSecureContext) {
   document.body.classList.add("ugly-http-status-loaded");
 
-  chrome.storage.local.get({
-    theme: "default",
-    exceptions: {}
-  }, function (items) {
-    var theme = items.theme;
-    var exceptions = items.exceptions;
-    if (themes.indexOf(theme) === -1) {
-      theme = defaultTheme();
-    }
-    if (!exceptions[window.location.hostname]) {
-      document.body.classList.add("ugly-http-theme-" + theme);
-    }
-  });
+  chrome.storage.local.get(
+    {
+      theme: "default",
+      exceptions: {},
+    },
+    (items) => {
+      let { theme } = items;
+      if (!themes.has(theme)) {
+        theme = defaultTheme();
+      }
+      if (!items.exceptions[window.location.hostname]) {
+        document.body.classList.add(`ugly-http-theme-${theme}`);
+      }
+    },
+  );
 }

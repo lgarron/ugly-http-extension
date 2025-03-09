@@ -1,1 +1,5 @@
-document.body.classList.forEach(function (c) { if (c.startsWith("ugly-http-theme-")) { document.body.classList.remove(c) } });
+for (const className of document.body.classList) {
+  if (className.startsWith("ugly-http-theme-")) {
+    document.body.classList.remove(className);
+  }
+}
