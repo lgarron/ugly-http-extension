@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "dependencies": {
+      "devDependencies": {
         "@types/chrome": "^0.0.308",
       },
     },

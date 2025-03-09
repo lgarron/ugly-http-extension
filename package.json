@@ -1,5 +1,6 @@
 {
-  "dependencies": {
+  "license": "MIT",
+  "devDependencies": {
     "@types/chrome": "^0.0.308"
   }
 }
